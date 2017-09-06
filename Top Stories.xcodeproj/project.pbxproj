@@ -14,6 +14,7 @@
 		C85CFB6B1F60625F00FDE24D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85CFB691F60625F00FDE24D /* LaunchScreen.storyboard */; };
 		C85CFB761F60626000FDE24D /* Top_StoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85CFB751F60626000FDE24D /* Top_StoriesTests.swift */; };
 		C85CFB811F60626000FDE24D /* Top_StoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85CFB801F60626000FDE24D /* Top_StoriesUITests.swift */; };
+		C85CFB8F1F6066C300FDE24D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85CFB8E1F6066C300FDE24D /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C85CFB7C1F60626000FDE24D /* Top StoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Top StoriesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85CFB801F60626000FDE24D /* Top_StoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top_StoriesUITests.swift; sourceTree = "<group>"; };
 		C85CFB821F60626000FDE24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C85CFB8E1F6066C300FDE24D /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../SwiftyJSON-master/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				C85CFB671F60625F00FDE24D /* Assets.xcassets */,
 				C85CFB691F60625F00FDE24D /* LaunchScreen.storyboard */,
 				C85CFB6C1F60625F00FDE24D /* Info.plist */,
+				C85CFB8E1F6066C300FDE24D /* SwiftyJSON.swift */,
 			);
 			path = "Top Stories";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85CFB8F1F6066C300FDE24D /* SwiftyJSON.swift in Sources */,
 				C85CFB631F60625F00FDE24D /* SourcesViewController.swift in Sources */,
 				C85CFB611F60625F00FDE24D /* AppDelegate.swift in Sources */,
 			);
