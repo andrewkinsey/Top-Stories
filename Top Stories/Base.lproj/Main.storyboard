@@ -40,6 +40,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6tU-Ew-vEJ" kind="show" id="mqI-jI-PRe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,11 +50,17 @@
                             <outlet property="delegate" destination="9wN-gt-Txg" id="Gcm-wx-TZx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FNy-PG-Vun"/>
+                    <navigationItem key="navigationItem" id="FNy-PG-Vun">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fQ1-if-DNI">
+                            <connections>
+                                <action selector="onTappedDoneButton:" destination="9wN-gt-Txg" id="wET-K0-qlY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6p-Vr-tee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="292"/>
+            <point key="canvasLocation" x="516" y="292"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y2C-wd-yNs">
@@ -70,6 +79,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7x4-Nh-TaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-236" y="292"/>
+        </scene>
+        <!--Articles View Controller-->
+        <scene sceneID="v13-SF-E22">
+            <objects>
+                <tableViewController id="6tU-Ew-vEJ" customClass="ArticlesViewController" customModule="Top_Stories" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AHu-hk-Nor">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="h6h-da-Egk" detailTextLabel="pii-gw-Fkh" style="IBUITableViewCellStyleSubtitle" id="oyN-Ak-xg7">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oyN-Ak-xg7" id="fN6-tX-xDZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h6h-da-Egk">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pii-gw-Fkh">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6tU-Ew-vEJ" id="Ssx-xf-1we"/>
+                            <outlet property="delegate" destination="6tU-Ew-vEJ" id="gdT-CO-MMJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="27X-tj-VRW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hm5-cb-PLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1306" y="292"/>
         </scene>
     </scenes>
 </document>
