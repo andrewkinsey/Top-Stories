@@ -10,7 +10,7 @@ import UIKit
 
 class SourceViewController: UITableViewController
 {
-
+    
     var sources = [[String: String]]()
     let apiKey = "5d892509a49046a087917c466fa80d09"
     
@@ -19,19 +19,24 @@ class SourceViewController: UITableViewController
         super.viewDidLoad()
         self.title = "News Source"
         let query = "https://newsapi.org/v1/sources?language=en&country=us&apiKey=\(apiKey)"
-        if let url = URL(string: query)
-        {
-            if let data = try? Data(contentsOf: url) //optional unwrapping "if it's there"
+        DispatchQueue.global(qos: .userInitiated).async
             {
-                let json = try! JSON(data: data)     //forced unwrapping
-                if json["status"] == "ok"
+                [unowned self] in
+                
+                if let url = URL(string: query)
                 {
-                    parse(json: json)
-                    return
+                    if let data = try? Data(contentsOf: url) //optional unwrapping "if it's there"
+                    {
+                        let json = try! JSON(data: data)     //forced unwrapping
+                        if json["status"] == "ok"
+                        {
+                            self.parse(json: json)
+                            return
+                        }
+                    }
                 }
-            }
+                self.loadError() //if anything fails
         }
-        loadError() //if anything fails
     }
     
     func parse(json: JSON)
@@ -44,14 +49,23 @@ class SourceViewController: UITableViewController
             let source = ["id": id, "name": name, "description": description]
             sources.append(source)
         }
-        tableView.reloadData()
+        DispatchQueue.main.async
+            {
+                [unowned self] in
+                self.tableView.reloadData()
+        }
     }
     
     func loadError()
     {
-        let alert = UIAlertController(title: "Loading Error", message: "There was a problem loading the news feed.", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async
+            {
+                [unowned self] in
+                
+                let alert = UIAlertController(title: "Loading Error", message: "There was a problem loading the news feed.", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
